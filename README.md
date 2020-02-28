@@ -3,7 +3,9 @@ README.md for Project 3 Group H
 
 Group members: Dongwei Fu, Alex Adams,Xinchang Li
 
--------------Project-3-Group-H.py README-------------
+========================Project-3-Group-H.py README===============================
+
+
 This code consists of mainly three parts:
        ---------------------------------------
        1. GPCP data downloading and statistics
