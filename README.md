@@ -7,11 +7,11 @@ Group members: Dongwei Fu, Alex Adams,Xinchang Li
 
 
 This code consists of mainly three parts:
-       ---------------------------------------
+----------------------------------------------------------------------------------
        1. GPCP data downloading and statistics
        2. NCEP Reanalysis data downloading
        3. Plotting NCEP Reanalysis data
-       ---------------------------------------
+----------------------------------------------------------------------------------
        
        
 In Part 1, GPCP data downloading is achieved through BeautifulSoup package,
