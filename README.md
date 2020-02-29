@@ -39,15 +39,14 @@ Long term mean (LTM) fields for the base period (1981 - 2010, monthly averaged) 
 1) **Compact**: a dictionary is created with variable names, URLs and other information essential for data retrieval and reduction, and a `for` loop (or two nested `for` loops for looping through years) is used to loop through, retrieve and concatenate data for the selected variables. The data are stored in `xarray.DataArrays` which are consoladated into dictionaries; 
 2) **Direct**: data for each variable is explicitly specified, retrieved and reduced with one line of code.
 
-Anomalies for the expreme precipitation days are then calculated to be the difference between the XPRECIP mean and the LTM for each variable per grid. Note that some units are inconsistent between the two mean fields and are conformed before anomaly calculations.
+Anomalies for the extreme precipitation days are then calculated to be the difference between the XPRECIP mean and the LTM for each variable per grid. Note that some units are inconsistent between the two mean fields and are conformed before anomaly calculations.
 
 ### Part 3
-XPRECIP means, LTMs and anomalies are plotted for the whole Globe using Cartopy and matplotlib. Contours, filled contours or vector plots are used based on the variables. Melbourne is marked by a red or black star in each plot for reference.
+XPRECIP means, LTMs and anomalies are plotted for the whole Globe using Cartopy and matplotlib. Contours, filled contours or vector plots are used based on the variables. Melbourne is marked by a red or black star in each plot for reference. To focus on the region of interest, while still showing conditions around the globe, the central longitude of the maps was shifted 180 degrees to be centered on the International Dateline, which is much closer to Melbourne. For the vector plots, the density of the wind vectors can be changed by editting the "skip" variable at the beginning of each vector plotting section, which signifies how many data points are skipped before plotting the next one in the row/column. This may be desired for more aesthetically pleasing vector maps.
 
-(Alex: maybe say something about the vector plot and why it's rotated for 180?)
       
 ### Known caveats
 1) When retrieving data using the **Compact** method, the temporal loop might terminate if there's no XPRECIP days in one of the years. An `if` statement could be added to check each timestep and skip that year if no dates are found.
-2) (maybe put that plot thing here?)
+2) It appears that there was a problem with either the data retrieval/storage method or plotting method for the wind vector data. It was noted at one point that the same method that was used for plotting the other fields while shifting the central longitude 180 degrees did not shift the vector data as well. It might be specific to the matplotlib vector plotting methods such as .quiver and .barbs, which is why this error only presented with the wind vector data. A solution could not be found, so the wind vector data are plotted centered on the Prime Meridian instead, so that the data are still spatially accurate.
 
 
